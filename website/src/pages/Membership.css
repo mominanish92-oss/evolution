@@ -1,0 +1,998 @@
+/* ==================================================
+   MEMBERSHIP PAGE
+================================================== */
+
+.membership-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+  background: #05070a;
+  color: #ffffff;
+}
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.membership-glow {
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: rgba(255, 40, 0, 0.08);
+  filter: blur(150px);
+  pointer-events: none;
+}
+
+.membership-glow-one {
+  top: 100px;
+  left: -300px;
+}
+
+.membership-glow-two {
+  top: 900px;
+  right: -300px;
+}
+
+.membership-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.membership-hero {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, 90%);
+  margin: 0 auto;
+
+  padding: 100px 0 90px;
+
+  text-align: center;
+}
+
+.membership-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-bottom: 25px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.membership-label span {
+  width: 35px;
+  height: 1px;
+
+  background: #ff3218;
+}
+
+.membership-hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 8vw, 100px);
+  line-height: 0.95;
+  letter-spacing: -4px;
+  font-weight: 950;
+}
+
+.membership-hero h1 span {
+  color: #ff3218;
+
+  text-shadow:
+    0 0 20px rgba(255, 50, 20, 0.35);
+}
+
+.membership-intro {
+  max-width: 680px;
+  margin: 35px auto 0;
+
+  color: #9ca3af;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ==================================================
+   PRICING SECTION
+================================================== */
+
+.pricing-section {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 90%);
+  margin: 0 auto 110px;
+}
+
+.pricing-section-heading {
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+
+  margin-bottom: 45px;
+}
+
+.pricing-section-heading p {
+  margin: 0 0 12px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.pricing-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+}
+
+.pricing-section-heading h2 span {
+  display: block;
+  color: #ff3218;
+}
+
+.pricing-heading-line {
+  flex: 1;
+
+  height: 1px;
+  margin-bottom: 8px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 50, 24, 0.5),
+    transparent
+  );
+}
+
+/* ==================================================
+   PRICE GRID
+================================================== */
+
+.pricing-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* ==================================================
+   PRICE CARD
+================================================== */
+
+.price-card {
+  position: relative;
+
+  min-height: 350px;
+
+  padding: 28px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.price-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: #ff3218;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.35s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 50, 24, 0.5);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.5);
+}
+
+.price-card:hover::before {
+  transform: scaleX(1);
+}
+
+.featured-price-card {
+  border-color: rgba(255, 50, 24, 0.4);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 50, 24, 0.1),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.popular-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  padding: 7px 10px;
+
+  background: #ff3218;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.price-number {
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.price-card h3 {
+  margin: 65px 0 15px;
+
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.original-price {
+  color: #6f7782;
+
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
+.offer-label {
+  margin-top: 22px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.offer-price {
+  margin-top: 4px;
+
+  color: #ff3218;
+
+  font-size: 42px;
+  line-height: 1;
+  font-weight: 950;
+}
+
+.price-bottom {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+  left: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #69717c;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.price-bottom span:last-child {
+  color: #ff3218;
+
+  font-size: 18px;
+}
+
+/* ==================================================
+   EXTRAS
+================================================== */
+
+.extras-section {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, 90%);
+  margin: 0 auto 130px;
+}
+
+.extras-heading {
+  margin-bottom: 40px;
+}
+
+.extras-heading p {
+  margin-bottom: 12px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.extras-heading h2 {
+  margin: 0;
+
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+}
+
+.extras-heading h2 span {
+  color: #ff3218;
+}
+
+.extras-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.extra-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition: 0.3s ease;
+}
+
+.extra-card:hover {
+  border-color: rgba(255, 50, 24, 0.4);
+
+  transform: translateY(-5px);
+}
+
+.extra-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 50, 24, 0.4);
+  border-radius: 50%;
+
+  color: #ff3218;
+
+  font-size: 24px;
+}
+
+.extra-content {
+  flex: 1;
+}
+
+.extra-content p {
+  margin: 0 0 5px;
+
+  color: #707984;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.extra-content h3 {
+  margin: 0;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.extra-prices {
+  text-align: right;
+}
+
+.extra-original {
+  display: block;
+
+  color: #666d76;
+
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.extra-prices strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #ff3218;
+
+  font-size: 28px;
+}
+
+/* ==================================================
+   BENEFITS
+================================================== */
+
+.membership-benefits {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 90%);
+  margin: 0 auto 130px;
+}
+
+.benefits-heading {
+  margin-bottom: 50px;
+}
+
+.benefits-heading p {
+  margin-bottom: 15px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.benefits-heading h2 {
+  margin: 0;
+
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+}
+
+.benefits-heading h2 span {
+  color: #ff3218;
+}
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.benefit {
+  min-height: 240px;
+
+  padding: 30px;
+
+  background: #080a0d;
+}
+
+.benefit > span {
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.benefit h3 {
+  margin: 55px 0 15px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.benefit p {
+  margin: 0;
+
+  color: #858d98;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.membership-contact {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 90%);
+  margin: 0 auto 120px;
+}
+
+.contact-top {
+  margin-bottom: 50px;
+}
+
+.contact-top > p:first-child {
+  margin-bottom: 15px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.contact-top h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.contact-top h2 span {
+  color: #ff3218;
+}
+
+.contact-description {
+  max-width: 550px;
+
+  margin-top: 25px;
+
+  color: #858d98;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 20px;
+
+  min-height: 180px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: rgba(255, 50, 24, 0.45);
+
+  transform: translateY(-5px);
+}
+
+.contact-card-number {
+  color: #ff3218;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.contact-card p {
+  margin: 0 0 8px;
+
+  color: #737b86;
+
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.contact-card h3 {
+  margin: 0 0 18px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.contact-card address {
+  color: #aeb5be;
+
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+.contact-card address strong {
+  color: #ffffff;
+}
+
+.contact-phone {
+  color: #ff3218;
+
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.instagram-name {
+  display: block;
+
+  max-width: 220px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* ==================================================
+   CTA
+================================================== */
+
+.membership-cta {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, 90%);
+  margin: 0 auto;
+
+  padding: 90px 30px;
+
+  border: 1px solid rgba(255, 50, 24, 0.2);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 50, 24, 0.08),
+      transparent 65%
+    );
+
+  text-align: center;
+}
+
+.cta-line {
+  width: 60px;
+  height: 3px;
+
+  margin: 0 auto 30px;
+
+  background: #ff3218;
+}
+
+.membership-cta > p {
+  margin-bottom: 20px;
+
+  color: #ff3218;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.membership-cta h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.membership-cta h2 span {
+  color: #ff3218;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  margin-top: 40px;
+}
+
+.membership-primary-btn,
+.membership-secondary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  min-height: 52px;
+
+  padding: 0 25px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.membership-primary-btn {
+  background: #ff3218;
+  color: #ffffff;
+}
+
+.membership-primary-btn span {
+  font-size: 20px;
+}
+
+.membership-primary-btn:hover {
+  background: #ffffff;
+  color: #080a0d;
+
+  transform: translateY(-3px);
+}
+
+.membership-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: #ffffff;
+}
+
+.membership-secondary-btn:hover {
+  border-color: #ff3218;
+  color: #ff3218;
+
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.membership-footer {
+  position: relative;
+  z-index: 1;
+
+  width: min(1200px, 90%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 70px auto 0;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #555d67;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 650px) {
+  .membership-page {
+    padding-bottom: 50px;
+  }
+
+  .membership-hero {
+    width: 92%;
+    padding: 70px 0 65px;
+  }
+
+  .membership-hero h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .membership-intro {
+    font-size: 14px;
+  }
+
+  .pricing-section {
+    width: 92%;
+    margin-bottom: 80px;
+  }
+
+  .pricing-section-heading {
+    display: block;
+  }
+
+  .pricing-section-heading h2 {
+    font-size: 42px;
+  }
+
+  .pricing-heading-line {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .price-card {
+    min-height: 330px;
+  }
+
+  .price-card h3 {
+    margin-top: 50px;
+  }
+
+  .offer-price {
+    font-size: 38px;
+  }
+
+  .extras-section {
+    width: 92%;
+    margin-bottom: 90px;
+  }
+
+  .extras-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .extra-card {
+    padding: 20px;
+  }
+
+  .extra-prices strong {
+    font-size: 24px;
+  }
+
+  .membership-benefits {
+    width: 92%;
+    margin-bottom: 90px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit {
+    min-height: auto;
+    padding: 25px;
+  }
+
+  .benefit h3 {
+    margin-top: 35px;
+  }
+
+  .membership-contact {
+    width: 92%;
+    margin-bottom: 90px;
+  }
+
+  .contact-top h2 {
+    font-size: 50px;
+    letter-spacing: -2px;
+  }
+
+  .contact-description {
+    font-size: 14px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    min-height: 160px;
+  }
+
+  .membership-cta {
+    width: 92%;
+    padding: 65px 18px;
+  }
+
+  .membership-cta h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .membership-primary-btn,
+  .membership-secondary-btn {
+    width: 100%;
+  }
+
+  .membership-footer {
+    width: 92%;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
