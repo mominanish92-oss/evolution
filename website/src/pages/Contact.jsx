@@ -33,7 +33,7 @@ function Contact() {
     "https://www.instagram.com/evolutiongymfitness_hosabettu?igsh=dHprbWZ6emU3YTJ0&igsi=dHprbWZ6emU3YTJ0";
 
   const whatsappLink =
-    "https://wa.me/919448511174";
+    "https://wa.me/917760024061";
 
   return (
     <main className="contact-page">
@@ -58,7 +58,6 @@ function Contact() {
 
       {/* CONTACT CONTENT */}
       <section className="contact-container contact-reveal">
-        {/* CONTACT INFORMATION */}
         <div className="contact-info">
           <div className="contact-section-label">
             <span></span>
@@ -83,9 +82,8 @@ function Contact() {
 
             <div>
               <span>CALL US</span>
-
-              <a href="tel:+919448511174">
-                +91 94485 11174
+              <a href="tel:+917760024061">
+                +91 77600 24061
               </a>
             </div>
           </div>
@@ -96,7 +94,6 @@ function Contact() {
 
             <div>
               <span>EMAIL US</span>
-
               <a href="mailto:evolutiongymfitness@gmail.com">
                 evolutiongymfitness@gmail.com
               </a>
@@ -186,7 +183,10 @@ function Contact() {
 
         <div className="quick-actions">
           {/* CALL */}
-          <a href="tel:+919448511174" className="quick-card">
+          <a
+            href="tel:+917760024061"
+            className="quick-card"
+          >
             <span className="quick-number">01</span>
 
             <div>
