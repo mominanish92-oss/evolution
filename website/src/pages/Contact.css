@@ -818,3 +818,24 @@
     font-size: 10px;
   }
 }
+/* INSTAGRAM BUTTON */
+
+.instagram-detail {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.instagram-detail p {
+  margin: 6px 0 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.instagram-detail:hover {
+  transform: translateX(8px);
+}
+
+.instagram-detail:hover .contact-icon {
+  box-shadow: 0 0 20px rgba(140, 255, 0, 0.35);
+}

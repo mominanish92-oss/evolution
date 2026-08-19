@@ -1,5 +1,7 @@
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import "./Contact.css";
 
 function Contact() {
@@ -27,6 +29,12 @@ function Contact() {
   const googleMapsLink =
     "https://maps.app.goo.gl/E2bf1ci3HiBhK7747";
 
+  const instagramLink =
+    "https://www.instagram.com/evolutiongymfitness_hosabettu?igsh=dHprbWZ6emU3YTJ0&igsi=dHprbWZ6emU3YTJ0";
+
+  const whatsappLink =
+    "https://wa.me/919448511174";
+
   return (
     <main className="contact-page">
       {/* BACKGROUND GLOWS */}
@@ -43,8 +51,8 @@ function Contact() {
 
         <p className="contact-hero-text">
           Have questions about membership, personal training, or your
-          fitness journey? Get in touch with Evolution Gym Fitness
-          and take the first step toward becoming stronger.
+          fitness journey? Get in touch with Evolution Gym Fitness and
+          take the first step toward becoming stronger.
         </p>
       </section>
 
@@ -75,6 +83,7 @@ function Contact() {
 
             <div>
               <span>CALL US</span>
+
               <a href="tel:+919448511174">
                 +91 94485 11174
               </a>
@@ -87,22 +96,46 @@ function Contact() {
 
             <div>
               <span>EMAIL US</span>
+
               <a href="mailto:evolutiongymfitness@gmail.com">
                 evolutiongymfitness@gmail.com
               </a>
             </div>
           </div>
 
-          {/* LOCATION */}
-          <div className="contact-detail">
-            <div className="contact-icon">⌖</div>
+          {/* INSTAGRAM */}
+          <a
+            href={instagramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-detail instagram-detail"
+          >
+            <div className="contact-icon">
+              <FaInstagram />
+            </div>
 
             <div>
-              <span>OUR LOCATION</span>
-              <p>EVOLUTION GYM FITNESS</p>
-              <p>Visit us at our gym location.</p>
+              <span>FOLLOW US</span>
+              <p>INSTAGRAM</p>
             </div>
-          </div>
+          </a>
+
+          {/* WHATSAPP */}
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-detail whatsapp-detail"
+          >
+            <div className="contact-icon">
+              <FaWhatsapp />
+            </div>
+
+            <div>
+              <span>CHAT WITH US</span>
+              <p>WHATSAPP</p>
+            </div>
+          </a>
         </div>
 
         {/* LOCATION CARD */}
@@ -152,6 +185,7 @@ function Contact() {
         </div>
 
         <div className="quick-actions">
+          {/* CALL */}
           <a href="tel:+919448511174" className="quick-card">
             <span className="quick-number">01</span>
 
@@ -163,6 +197,7 @@ function Contact() {
             <strong>→</strong>
           </a>
 
+          {/* VISIT */}
           <a
             href={googleMapsLink}
             target="_blank"
@@ -179,6 +214,7 @@ function Contact() {
             <strong>→</strong>
           </a>
 
+          {/* MEMBERSHIP */}
           <Link to="/membership" className="quick-card">
             <span className="quick-number">03</span>
 
@@ -219,3 +255,4 @@ function Contact() {
 }
 
 export default Contact;
+
