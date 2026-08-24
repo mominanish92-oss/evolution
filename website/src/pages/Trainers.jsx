@@ -5,6 +5,13 @@ import avinash1 from "../assets/trainers/avinash1.jpg";
 import avinash2 from "../assets/trainers/avinash2.jpg";
 import avinash3 from "../assets/trainers/avinash3.jpg";
 import avinash4 from "../assets/trainers/avinash4.jpg";
+import avinash5 from "../assets/trainers/avinash5.jpg";
+import avinash6 from "../assets/trainers/avinash6.jpg";
+import avinash7 from "../assets/trainers/avinash7.jpg";
+import avinash8 from "../assets/trainers/avinash8.jpg";
+import avinash9 from "../assets/trainers/avinash9.jpg";
+import avinash10 from "../assets/trainers/avinash10.jpg";
+import avinash11 from "../assets/trainers/avinash11.jpg";
 
 import aishwarya1 from "../assets/trainers/aishwarya1.jpg";
 import aishwarya2 from "../assets/trainers/aishwarya2.jpg";
@@ -25,7 +32,7 @@ function Trainers() {
   const trainers = {
     avinash: {
       name: "AVINASH P. SUVARNA",
-      images: [avinash1, avinash2, avinash3, avinash4],
+      images: [avinash1, avinash2, avinash3, avinash4, avinash5, avinash6, avinash7, avinash8, avinash9, avinash10, avinash11],
     },
     aishwarya: {
       name: "AISHWARYA SUVARNA",
